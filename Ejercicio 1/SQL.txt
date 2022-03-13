@@ -1,0 +1,15 @@
+Escriba una Query que entregue la lista de alumnos para el curso "programación"
+
+SELECT ID_Alumno, ID_Cursos from AlumnoXCurso WHERE ID_Cursos = "programación"
+
+Escriba una Query que calcule el promedio de notas de un alumno en un curso.
+
+SELECT ID_Alumno, AVG(Nota) As Promedio from Pruebas WHERE ID_Alumno = "ffuenzalida" AND ID_Curso = "programación"
+
+Escriba una Query que entregue a los alumnos y el promedio que tiene en cada curso.
+
+SELECT ID_Alumno, AVG(Nota) As Promedio, ID_Curso FROM Pruebas GROUP BY ID_Alumno, ID_Curso
+
+Escriba una Query que lista a todos los alumnos con más de un curso con promedio rojo.
+
+SELECT ID_Alumno, ID_Curso FROM Pruebas WHERE AVG(Nota) < 50 GROUP BY ID_Alumno, ID_Curso HAVING COUNT(*) > 1
