@@ -17,11 +17,17 @@ class Teacher(models.Model):
 
 class Course(models.Model):
     ID_Course = models.CharField(max_length=10)
-    ID_Teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+class TeacherCourse(models.Model):
+    ID_Course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    ID_Teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.ID_Course
 
 class Exam(models.Model):
     ID_Exam = models.CharField(max_length=10)

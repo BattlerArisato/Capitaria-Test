@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <style>
+        .home-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+    </style>
+
+    <h1>{{st.name}}</h1>
+
+    <div class="home-container">
+        <div>
+            <h3>Su promedio de notas es de: {{info.Score__avg}}</h3>
+            <hr>
+        </div>
+    </div>
+
+{% endblock %}

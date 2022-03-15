@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Lista de Cursos</h1>
+    <div>
+        {% for course in ls %}
+            <div>
+                <span>@{{course.name}}</span>
+                <a href="{% url 'update-course' course.id %}">Editar</a>
+                <a href="{% url 'delete-course' course.id %}">Eliminar</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
